@@ -4,3 +4,5 @@ P:\uppgifter\1-1-vaxelpengar-js23mi\1-1-vaxelpengar-js23mi\bin\Debug\1-1-vaxelpe
 P:\uppgifter\1-1-vaxelpengar-js23mi\1-1-vaxelpengar-js23mi\obj\Debug\1-1-vaxelpengar-js23mi.csprojResolveAssemblyReference.cache
 P:\uppgifter\1-1-vaxelpengar-js23mi\1-1-vaxelpengar-js23mi\obj\Debug\1-1-vaxelpengar-js23mi.exe
 P:\uppgifter\1-1-vaxelpengar-js23mi\1-1-vaxelpengar-js23mi\obj\Debug\1-1-vaxelpengar-js23mi.pdb
+P:\uppgifter\1-1-vaxelpengar-js23mi\1-1-vaxelpengar-js23mi\obj\Debug\_1_1_vaxelpengar_js23mi.Properties.Resources.resources
+P:\uppgifter\1-1-vaxelpengar-js23mi\1-1-vaxelpengar-js23mi\obj\Debug\1-1-vaxelpengar-js23mi.csproj.GenerateResource.Cache

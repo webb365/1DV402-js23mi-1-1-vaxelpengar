@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 namespace _1_1_vaxelpengar_js23mi{
     class Program{
         static void Main(string[] args){
-
+              do {
+                  Console.WriteLine("Du är bäst!");
+              } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
 
-        private static double ReadPositveDoble(string prompt){
+        private static double ReadPositiveDouble(string prompt){
+            double sum = 6.76;
 
-            return 5.34;
+            return sum;
         }
 
         private static uint ReadUint(string prompt, uint minValue){
