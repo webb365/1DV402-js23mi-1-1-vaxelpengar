@@ -123,7 +123,10 @@
   <data name="Continue_Prompt" xml:space="preserve">
     <value>Tryck tagent för ny beräkning - Esc avslutar</value>
   </data>
-  <data name="Total_sum" xml:space="preserve">
+  <data name="Money_Recived" xml:space="preserve">
+    <value>Ange erhållet belopp              :</value>
+  </data>
+  <data name="Total_Sum" xml:space="preserve">
     <value>Ange totalsumma                   :</value>
   </data>
 </root>

@@ -79,11 +79,20 @@ namespace _1_1_vaxelpengar_js23mi.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ange erhållet belopp              :.
+        /// </summary>
+        internal static string Money_Recived {
+            get {
+                return ResourceManager.GetString("Money_Recived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ange totalsumma                   :.
         /// </summary>
-        internal static string Total_sum {
+        internal static string Total_Sum {
             get {
-                return ResourceManager.GetString("Total_sum", resourceCulture);
+                return ResourceManager.GetString("Total_Sum", resourceCulture);
             }
         }
     }

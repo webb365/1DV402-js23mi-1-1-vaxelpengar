@@ -8,7 +8,11 @@ namespace _1_1_vaxelpengar_js23mi{
     class Program{
          static void Main(string[] args){
               do {
-                 Console.WriteLine( ReadPositiveDouble(Properties.Resources.Total_sum));
+                   double total = ReadPositiveDouble(Properties.Resources.Total_Sum);// Klar Total
+                   uint payTotal = (uint)Math.Round(total);// Klar Att Betala
+                   double roundingOffAmount = total - payTotal; // Klar Öresavrundning
+                   uint moneyRecived = ReadUint(Properties.Resources.Money_Recived, payTotal); // Klar Kontant
+                   Console.Write(moneyRecived);
               } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
 
@@ -17,8 +21,8 @@ namespace _1_1_vaxelpengar_js23mi{
             while (true) {
                 Console.Write(prompt);
                 try{
-                    sum = Math.Round(double.Parse(Console.ReadLine()));
-                    if (sum < 1){
+                    sum =double.Parse(Console.ReadLine());
+                    if (Math.Round(sum) < 1){
                         throw new Exception();
                     }
                     return sum;
@@ -32,8 +36,21 @@ namespace _1_1_vaxelpengar_js23mi{
         }
 
         private static uint ReadUint(string prompt, uint minValue){
-
-            return 99;
+            uint cashRecived;
+            while (true) {
+                Console.Write(prompt);
+                try{
+                    cashRecived = uint.Parse(Console.ReadLine());
+                    if (cashRecived < minValue) {
+                        throw new Exception();
+                    }
+                    return cashRecived;
+                }
+                catch {
+                    // använd  viewmessage när det blir klart
+                    Console.WriteLine("FEL2");
+                }
+            }
         }
 
         private static uint[] SplitIntoDenominations(uint change, uint[] denominations){
