@@ -1,0 +1,6 @@
+P:\uppgifter\1-1-vaxelpengar-js23mi\1-1-vaxelpengar-js23mi\bin\Debug\1-1-vaxelpengar-js23mi.exe.config
+P:\uppgifter\1-1-vaxelpengar-js23mi\1-1-vaxelpengar-js23mi\bin\Debug\1-1-vaxelpengar-js23mi.exe
+P:\uppgifter\1-1-vaxelpengar-js23mi\1-1-vaxelpengar-js23mi\bin\Debug\1-1-vaxelpengar-js23mi.pdb
+P:\uppgifter\1-1-vaxelpengar-js23mi\1-1-vaxelpengar-js23mi\obj\Debug\1-1-vaxelpengar-js23mi.csprojResolveAssemblyReference.cache
+P:\uppgifter\1-1-vaxelpengar-js23mi\1-1-vaxelpengar-js23mi\obj\Debug\1-1-vaxelpengar-js23mi.exe
+P:\uppgifter\1-1-vaxelpengar-js23mi\1-1-vaxelpengar-js23mi\obj\Debug\1-1-vaxelpengar-js23mi.pdb
