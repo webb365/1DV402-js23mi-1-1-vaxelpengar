@@ -12,7 +12,9 @@ namespace _1_1_vaxelpengar_js23mi{
                    uint payTotal = (uint)Math.Round(total);// Klar Att Betala
                    double roundingOffAmount = total - payTotal; // Klar Öresavrundning
                    uint moneyRecived = ReadUint(Properties.Resources.Money_Recived, payTotal); // Klar Kontant
-                   Console.Write(moneyRecived);
+                   uint rest = moneyRecived - payTotal; // Klar Tillbaka 
+                   uint[,] denominations = new uint[,] { { 500, 0 }, { 100, 0 }, { 50, 0 }, { 20, 0 }, { 10, 0 }, { 5, 0 }, { 1, 0 } };// Går ändra utan problem
+                   denominations = SplitIntoDenominations(rest, denominations);// Retunerar antal av varje sedel/mynt
               } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
 
@@ -53,9 +55,13 @@ namespace _1_1_vaxelpengar_js23mi{
             }
         }
 
-        private static uint[] SplitIntoDenominations(uint change, uint[] denominations){
-            denominations= new uint[]{55,76};
-
+        private static uint[,] SplitIntoDenominations(uint change, uint[,] denominations){
+            for (int i = 0; i < denominations.GetLength(0); i++) {
+                if (change / denominations[i, 0] >= 1) {
+                    denominations[i, 1] = change / denominations[i, 0];
+                    change %= denominations[i, 0];
+                }
+            }
             return denominations;
         }
 
@@ -63,7 +69,7 @@ namespace _1_1_vaxelpengar_js23mi{
 
         }
 
-        private static void ViewReceipt(double subtotal, double roundingOffAmount, uint total, uint change, uint[] notes, uint[] denominations){
+        private static void ViewReceipt(double subtotal, double roundingOffAmount, uint total, uint change, uint[] notes, uint[,] denominations){
 
         }
     
