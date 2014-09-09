@@ -8,13 +8,14 @@ namespace _1_1_vaxelpengar_js23mi{
     class Program{
         static void Main(string[] args){
               do {
-                  Console.WriteLine("Du är bäst!");
+                  ReadPositiveDouble(Properties.Resources.Total_sum);
               } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
 
         private static double ReadPositiveDouble(string prompt){
             double sum = 6.76;
-
+            Console.Write(prompt);
+            sum = double.Parse(Console.ReadLine());
             return sum;
         }
 
