@@ -14,26 +14,29 @@ namespace _1_1_vaxelpengar_js23mi{
                    double roundingOffAmount = total - payTotal; // Klar Öresavrundning
                    uint moneyRecived = ReadUint(Properties.Resources.Money_Recived, payTotal); // Klar Kontant
                    uint rest = moneyRecived - payTotal; // Klar Tillbaka 
-                   uint[,] denominations = new uint[,] { { 500, 0 }, { 100, 0 }, { 50, 0 }, { 20, 0 }, { 10, 0 }, { 5, 0 }, { 1, 0 } };// Går ändra utan problem
+                   uint[,] denominations = { { 500, 0 }, { 100, 0 }, { 50, 0 }, { 20, 0 }, { 10, 0 }, { 5, 0 }, { 1, 0 } };// Går ändra utan problem
                    denominations = SplitIntoDenominations(rest, denominations);// Retunerar antal av varje sedel/mynt
-
-                  ViewMessage(Properties.Resources.Total_Sum);
+                   uint[] notes = {0,5};
+                  ViewReceipt(total,roundingOffAmount, payTotal,rest, ,denominations);
+                  ViewMessage(Properties.Resources.Continue_Prompt);
               } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
 
         private static double ReadPositiveDouble(string prompt){
             double sum;
+            string input;
             while (true) {
                 Console.Write(prompt);
+                input = Console.ReadLine();
                 try{
-                    sum = double.Parse(Console.ReadLine());
+                    sum = double.Parse(input);
                     if (Math.Round(sum) < 1){
                         throw new Exception();
                     }
                     return sum;
                 }
                 catch {
-                    ViewMessage(String.Format(Properties.Resources.Wrong_amount, sum), true);
+                    ViewMessage(String.Format(Properties.Resources.Wrong_amount, input), true);
                 } 
             }
 
@@ -41,17 +44,19 @@ namespace _1_1_vaxelpengar_js23mi{
 
         private static uint ReadUint(string prompt, uint minValue){
             uint cashRecived;
+            string input;
             while (true) {
                 Console.Write(prompt);
+                input = Console.ReadLine();
                 try{
-                    cashRecived = uint.Parse(Console.ReadLine());
+                    cashRecived = uint.Parse(input);
                     if (cashRecived < minValue) {
                         throw new Exception();
                     }
                     return cashRecived;
                 }
                 catch {
-                    ViewMessage("FEl2", true);
+                    ViewMessage(String.Format(Properties.Resources.To_small, input), true);
                 }
             }
         }
@@ -78,7 +83,8 @@ namespace _1_1_vaxelpengar_js23mi{
         }
 
         private static void ViewReceipt(double subtotal, double roundingOffAmount, uint total, uint change, uint[] notes, uint[,] denominations){
-
+            Console.Write("Kvitto\n---------------------------------------");
+            Console.WriteLine(subtotal);
         }
     
     }
