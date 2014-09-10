@@ -61,15 +61,6 @@ namespace _1_1_vaxelpengar_js23mi.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ange erhållet belopp:.
-        /// </summary>
-        internal static string Cash_Prompt {
-            get {
-                return ResourceManager.GetString("Cash_Prompt", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Tryck tagent för ny beräkning - Esc avslutar.
         /// </summary>
         internal static string Continue_Prompt {
@@ -88,11 +79,29 @@ namespace _1_1_vaxelpengar_js23mi.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FEL! &apos;{0}&apos; är ett för litet belopp..
+        /// </summary>
+        internal static string To_small {
+            get {
+                return ResourceManager.GetString("To_small", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ange totalsumma                   :.
         /// </summary>
         internal static string Total_Sum {
             get {
                 return ResourceManager.GetString("Total_Sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FEL! &apos;{0}&apos; kan inte tolkas som en giltig summa pengar.
+        /// </summary>
+        internal static string Wrong_amount {
+            get {
+                return ResourceManager.GetString("Wrong_amount", resourceCulture);
             }
         }
     }

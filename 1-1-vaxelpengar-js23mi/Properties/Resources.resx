@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Cash_Prompt" xml:space="preserve">
-    <value>Ange erhållet belopp:</value>
-  </data>
   <data name="Continue_Prompt" xml:space="preserve">
     <value>Tryck tagent för ny beräkning - Esc avslutar</value>
   </data>
@@ -128,5 +125,11 @@
   </data>
   <data name="Total_Sum" xml:space="preserve">
     <value>Ange totalsumma                   :</value>
+  </data>
+  <data name="To_small" xml:space="preserve">
+    <value>FEL! '{0}' är ett för litet belopp.</value>
+  </data>
+  <data name="Wrong_amount" xml:space="preserve">
+    <value>FEL! '{0}' kan inte tolkas som en giltig summa pengar</value>
   </data>
 </root>
