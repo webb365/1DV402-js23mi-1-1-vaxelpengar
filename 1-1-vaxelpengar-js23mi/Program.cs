@@ -11,14 +11,13 @@ namespace _1_1_vaxelpengar_js23mi{
                   Console.Clear();
                    double total = ReadPositiveDouble(Properties.Resources.Total_Sum);// Klar Total
                    uint payTotal = (uint)Math.Round(total);// Klar Att Betala
-                   double roundingOffAmount = total - payTotal; // Klar Öresavrundning
+                   double roundingOffAmount = payTotal - total; // Klar Öresavrundning
                    uint moneyRecived = ReadUint(Properties.Resources.Money_Recived, payTotal); // Klar Kontant
                    uint rest = moneyRecived - payTotal; // Klar Tillbaka 
                    uint[,] denominations = { { 500, 0 }, { 100, 0 }, { 50, 0 }, { 20, 0 }, { 10, 0 }, { 5, 0 }, { 1, 0 } };// Går ändra utan problem
                    denominations = SplitIntoDenominations(rest, denominations);// Retunerar antal av varje sedel/mynt
-                   uint[] notes = {0,5};
-                  ViewReceipt(total,roundingOffAmount, payTotal,rest, ,denominations);
-                  ViewMessage(Properties.Resources.Continue_Prompt);
+                   ViewReceipt(total,roundingOffAmount,moneyRecived, payTotal,rest,denominations); // funkar
+                   ViewMessage(Properties.Resources.Continue_Prompt);
               } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
 
@@ -82,9 +81,20 @@ namespace _1_1_vaxelpengar_js23mi{
             Console.ResetColor();
         }
 
-        private static void ViewReceipt(double subtotal, double roundingOffAmount, uint total, uint change, uint[] notes, uint[,] denominations){
-            Console.Write("Kvitto\n---------------------------------------");
-            Console.WriteLine(subtotal);
+        private static void ViewReceipt(double subtotal, double roundingOffAmount,uint recived, uint total, uint change, uint[,] denominations){
+            Console.WriteLine("\nKvitto\n------------------------------------");
+            Console.WriteLine("Totalt              :{0,15:c}",subtotal);
+            Console.WriteLine("Öresavrundning      :{0,15:c}", roundingOffAmount);
+            Console.WriteLine("Att betala          :{0,15:c}", total);
+            Console.WriteLine("Kontant             :{0,15:c}", recived);
+            Console.WriteLine("Tillbaka            :{0,15:c}", change);
+            Console.WriteLine("------------------------------------");
+            for (int i = 0; i < denominations.GetLength(0); i++) {
+                if (denominations[i, 1] != 0)
+                {
+                     Console.WriteLine("{0,3}-lappar : {1,3}", denominations[i, 0], denominations[i, 1]);
+                }
+            }
         }
     
     }
